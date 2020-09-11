@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     IMAGE_REPO_NAME: "tt-tcl03-cook"
-    _PROJECT_NAME: "tt-tcl03-cook"
+    _PROJECT_NAME: "tt-tcl03-cluster"
 
 phases:
   install:
