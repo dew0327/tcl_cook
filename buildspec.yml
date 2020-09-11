@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "tt-tcl03-cook"
+    IMAGE_REPO_NAME: "cook"
     _PROJECT_NAME: "tt-tcl03-cook"
 
 phases:
