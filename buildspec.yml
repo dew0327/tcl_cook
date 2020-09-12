@@ -79,9 +79,16 @@ phases:
                     image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
                     ports:
                       - containerPort: 8080
+                    resources:
+                      requests:
+                        cpu: "50m"
+                        memory: "32Mi"
+                      limits:
+                        cpu: "500m"
+                        memory: "128Mi"
                     readinessProbe:
                       httpGet:
-                        path: /actuator/health
+                        path: /cooks
                         port: 8080
                       initialDelaySeconds: 10
                       timeoutSeconds: 2
@@ -89,7 +96,7 @@ phases:
                       failureThreshold: 10
                     livenessProbe:
                       httpGet:
-                        path: /actuator/health
+                        path: /cooks
                         port: 8080
                       initialDelaySeconds: 120
                       timeoutSeconds: 2
