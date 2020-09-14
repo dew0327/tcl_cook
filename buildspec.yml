@@ -86,21 +86,15 @@ phases:
                     ports:
                       - containerPort: 8080
                     readinessProbe:
-                      httpGet:
-                        path: /actuator/health
+                      tcpSocket:
                         port: 8080
-                      initialDelaySeconds: 10
-                      timeoutSeconds: 2
-                      periodSeconds: 5
-                      failureThreshold: 10
+                      initialDelaySeconds: 15
+                      periodSeconds: 20
                     livenessProbe:
-                      httpGet:
-                        path: /actuator/health
+                      tcpSocket:
                         port: 8080
-                      initialDelaySeconds: 120
-                      timeoutSeconds: 2
-                      periodSeconds: 5
-                      failureThreshold: 5
+                      initialDelaySeconds: 20
+                      periodSeconds: 30
           EOF
           #test2
 cache:
