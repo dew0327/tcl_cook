@@ -70,7 +70,7 @@ phases:
             strategy:
               type: RollingUpdate
               rollingUpdate:
-                maxSurge: 5
+                maxSurge: 2
                 maxUnavailable: 0
             selector:
               matchLabels:
