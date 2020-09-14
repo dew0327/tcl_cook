@@ -101,6 +101,7 @@ phases:
                       initialDelaySeconds: 20
                       periodSeconds: 30
           EOF
+          #test
 cache:
   paths:
     - '/root/.m2/**/*'
